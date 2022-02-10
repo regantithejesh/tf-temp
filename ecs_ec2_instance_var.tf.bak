@@ -1,0 +1,72 @@
+variable "cluster_arn" {
+  description = "specify ARN of existing ecs cluster"
+  type = string
+  default     = "arn:aws:ecs:us-east-1:864413304142:cluster/ecs-test-cluster"
+}
+variable "asgname" {
+  type = string
+  description = "specify ecs autoscaling group name"
+  default     = "sto-ecs-cluster-asg"
+}
+variable "executionrole_arn" {
+  type = string
+  description = "specify execution role arn"
+  default     = "arn:aws:iam::864413304142:role/ecs-task-execution-role"
+}
+variable "lt_name" {
+  type = string
+  description = "specify launch template name"
+  default     = "sto-ecs-test-lt"
+}
+variable "imageid" {
+  type = string
+  description = "specify ecs optimized ami id"
+  default     = "ami-0c5c9bcfb36b772fe"
+}
+variable "instancetype" {
+  type = string
+  description = "specify instance type"
+  default     = "t2.micro"
+}
+variable "keypair" {
+  type = string
+  description = "specify key pair for ecs server"
+  default     = "sto-app-dev-api-kp"
+}
+variable "containerimage" {
+  type = string
+  description = "specify image url"
+  default     = "864413304142.dkr.ecr.us-east-1.amazonaws.com/jenkins:latest"
+}
+variable "containerport" {
+  type = string
+  description = "specify container port"
+  default     = "8080"
+}
+variable "subnetid" {
+  type = list(string)
+  description = "specify subnetid for task"
+  default     = ["subnet-00df62d333354c0ce"]
+}
+variable "securitygroups" {
+  type = list(string)
+  description = "specify securitygroupid"
+  default     = ["sg-0d662eeca09cfab3a"]
+}
+variable "efsvolume" {
+  type = string
+  description = "specify efs id to mount"
+  default     = "fs-07f5ecec9ace1485d"
+}
+variable "servicename" {
+  type = string
+  description = "specify service name"
+  default     = "sto-jenkins-service-ec2"
+}
+variable "Taskdefinition" {
+  type = string
+  description = "specify Task definition name"
+  default     = "sto-jenkins-TD-ec2"
+}
+
+
